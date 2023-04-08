@@ -72,7 +72,7 @@ int main() {
     std::cout << "frame id: " << 0 << ", precision: " << precision * 100 << "%, recall: " << recall * 100 << "%, f1: "
               << f1 * 100 << "%" << ", time: " << time << "ms, time_opencv: " << time_opencv << "ms" << std::endl;
 
-    // 计算光流并绘制跟踪结果
+    // draw result
     cv::Mat resultImg = cv::Mat::zeros(img1.rows, img1.cols * 2, CV_8UC3);
     cv::hconcat(img1, img2, resultImg);
     for (size_t i = 0; i < keypoints1.size(); i++) {
@@ -85,7 +85,7 @@ int main() {
         cv::circle(resultImg, keypoints2_opencv[i] + cv::Point2f(img1.cols, 0), 2, cv::Scalar(0, 255, 255), 2);
     }
 
-    // 显示跟踪结果
+    // show result
     cv::imshow("KLT result", resultImg);
     cv::waitKey(0);
     std::string result_path = dir + "demo.jpg";
