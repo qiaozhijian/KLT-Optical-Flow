@@ -9,6 +9,7 @@ bool WEIGHTED = false;
 int MAX_LEVEL = 3;
 bool USE_OPENCV = true;
 double D_THRESHOLD = 0.5;
+int WINDOW_SIZE = 21;
 
 void readParameters(std::string config_file) {
     FILE *fh = fopen(config_file.c_str(), "r");
@@ -26,6 +27,7 @@ void readParameters(std::string config_file) {
     fsSettings["affine"] >> AFFINE;
     fsSettings["weighted"] >> WEIGHTED;
     fsSettings["max_level"] >> MAX_LEVEL;
+    fsSettings["window_size"] >> WINDOW_SIZE;
 
     MAX_CNT = fsSettings["max_cnt"];
     MIN_DIST = fsSettings["min_dist"];
@@ -40,6 +42,7 @@ void readParameters(std::string config_file) {
     printf("MIN DIST: %d\n", MIN_DIST);
     printf("AFFINE: %d\n", AFFINE);
     printf("WEIGHTED: %d\n", WEIGHTED);
+    printf("WINDOW SIZE: %d\n", WINDOW_SIZE);
     printf("MAX LEVEL: %d\n", MAX_LEVEL);
 
     printf("VO parameters: \n");

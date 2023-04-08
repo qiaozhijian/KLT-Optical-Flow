@@ -15,5 +15,6 @@ extern bool WEIGHTED;
 extern int MAX_LEVEL;
 extern bool USE_OPENCV;
 extern double D_THRESHOLD;
+extern int WINDOW_SIZE;
 
 void readParameters(std::string config_file);

@@ -32,11 +32,11 @@ int main() {
     std::vector<uchar> status;
     std::vector<float> err;
     std::chrono::steady_clock::time_point t1 = std::chrono::steady_clock::now();
-    elec5660::calcOpticalFlowPyrLK(gray1, gray2, keypoints1, keypoints2, status, err, cv::Size(21, 21), MAX_LEVEL);
+    elec5660::calcOpticalFlowPyrLK(gray1, gray2, keypoints1, keypoints2, status, err, cv::Size(WINDOW_SIZE, WINDOW_SIZE), MAX_LEVEL);
     if (FLOW_BACK) {
         std::vector<cv::Point2f> reversePts;
         std::vector<uchar> reverseStatus;
-        elec5660::calcOpticalFlowPyrLK(gray2, gray1, keypoints2, reversePts, reverseStatus, err, cv::Size(21, 21),
+        elec5660::calcOpticalFlowPyrLK(gray2, gray1, keypoints2, reversePts, reverseStatus, err, cv::Size(WINDOW_SIZE, WINDOW_SIZE),
                                        MAX_LEVEL);
         for (size_t i = 0; i < status.size(); i++) {
             if (status[i] && reverseStatus[i] && distance(reversePts[i], keypoints1[i]) <= D_THRESHOLD)

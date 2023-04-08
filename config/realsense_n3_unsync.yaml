@@ -4,6 +4,7 @@ max_cnt: 150                # max feature number in feature tracking
 min_dist: 30                # min distance between two features
 affine: 0                   # affine tracking
 weighted: 0                 # weighted tracking
+window_size: 21              # window size for optical flow
 max_level: 3                # max pyramid level
 
 flow_back: 1            # perform forward and backward optical flow to improve feature tracking accuracy
