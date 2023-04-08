@@ -8,7 +8,7 @@ Note: this experiment is done on a video which is not included in this repo. In 
 
 For our test demo, we use the following result:
 ```angular2html
-frame id: 0, precision: 100%, recall: 81.8966%, f1: 90.0474%, time: 14.1243ms, time_opencv: 0.771994ms
+frame id: 0, precision: 96.9388%, recall: 81.8966%, f1: 88.785%, time: 12.1133ms, time_opencv: 0.590632ms
 ```
 
 ![Experiment](data/demo.jpg)
@@ -25,5 +25,5 @@ make
 
 ## TODO
 If you have any interest in this project, you can try to implement the following features:
-- [ ] Improve the affine matrix estimation
-- [ ] Implement the multi-thread version
+- [ ] Implement the affine matrix estimation
+- [ ] Implement the multi-thread version to speed up the process

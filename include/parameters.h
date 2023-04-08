@@ -10,7 +10,6 @@ extern int MAX_CNT;
 extern int MIN_DIST;
 extern int SHOW_FEATURE;
 extern int FLOW_BACK;
-extern double F_THRESHOLD;
 extern bool AFFINE;
 extern bool WEIGHTED;
 extern int MAX_LEVEL;

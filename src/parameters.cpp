@@ -4,7 +4,6 @@ int MAX_CNT;
 int MIN_DIST;
 int FLOW_BACK;
 int SHOW_FEATURE;
-double F_THRESHOLD;
 bool AFFINE = false;
 bool WEIGHTED = false;
 int MAX_LEVEL = 3;
@@ -34,7 +33,6 @@ void readParameters(std::string config_file) {
 
     SHOW_FEATURE = fsSettings["show_feature"];
     FLOW_BACK = fsSettings["flow_back"];
-    F_THRESHOLD = fsSettings["F_threshold"];
 
     printf("Tracking parameters: \n");
     printf("USE_OPENCV: %d\n", USE_OPENCV);
@@ -46,8 +44,8 @@ void readParameters(std::string config_file) {
 
     printf("VO parameters: \n");
     printf("FLOW BACK: %d\n", FLOW_BACK);
+    printf("D_THRESHOLD: %f\n", D_THRESHOLD);
     printf("SHOW FEATURE: %d\n", SHOW_FEATURE);
-    printf("F THRESHOLD: %f\n", F_THRESHOLD);
 
     fsSettings.release();
 }

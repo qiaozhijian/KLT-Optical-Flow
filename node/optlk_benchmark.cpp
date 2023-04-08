@@ -10,19 +10,18 @@
 #include "global_defination/global_defination.h"
 
 int main() {
-    // 加载两个连续的图像帧
     readParameters(cmake_template::WORK_SPACE_PATH+"/config/realsense_n3_unsync.yaml");
     std::string dir = cmake_template::WORK_SPACE_PATH+"/data/";
     std::string img1_path = dir + "frame" + padding(0, 4) + ".jpg";
     std::string img2_path = dir + "frame" + padding(10, 4) + ".jpg";
     cv::Mat img1 = cv::imread(img1_path);
     cv::Mat img2 = cv::imread(img2_path);
-    // 转换为灰度
+    // convert to gray image
     cv::Mat gray1, gray2;
     cv::cvtColor(img1, gray1, cv::COLOR_BGR2GRAY);
     cv::cvtColor(img2, gray2, cv::COLOR_BGR2GRAY);
 
-    // 使用Shi-Tomasi角点检测器检测关键点
+    // detect features
     std::vector<cv::Point2f> keypoints1;
     int maxCorners = MAX_CNT;
     double qualityLevel = 0.01;
